@@ -18,7 +18,6 @@ using Soenneker.Utils.Directory.Abstract;
 using Soenneker.Utils.File.Abstract;
 using Soenneker.Utils.File.Download.Abstract;
 using System.Collections.Generic;
-
 namespace Soenneker.HealthSherpa.Runners.OpenApiClient.Utils;
 
 ///<inheritdoc cref="IFileOperationsUtil"/>
@@ -79,6 +78,12 @@ public sealed class FileOperationsUtil : IFileOperationsUtil
         await BuildAndPush(gitDirectory, cancellationToken).NoSync();
     }
 
+    /// <summary>
+    /// Deletes generated files beneath the directory while preserving C# project files.
+    /// </summary>
+    /// <param name="directoryPath">Root directory whose generated contents should be removed.</param>
+    /// <param name="cancellationToken">Token used to cancel the operation.</param>
+    /// <returns>A task that completes after the targeted files have been deleted.</returns>
     public async ValueTask DeleteAllExceptCsproj(string directoryPath, CancellationToken cancellationToken = default)
     {
         if (!(await _directoryUtil.Exists(directoryPath, cancellationToken)))
