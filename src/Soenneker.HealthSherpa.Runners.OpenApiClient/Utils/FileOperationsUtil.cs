@@ -20,7 +20,7 @@ using Soenneker.Utils.File.Download.Abstract;
 using System.Collections.Generic;
 namespace Soenneker.HealthSherpa.Runners.OpenApiClient.Utils;
 
-///<inheritdoc cref="IFileOperationsUtil"/>
+/// <inheritdoc cref="IFileOperationsUtil"/>
 public sealed class FileOperationsUtil : IFileOperationsUtil
 {
     private readonly ILogger<FileOperationsUtil> _logger;
