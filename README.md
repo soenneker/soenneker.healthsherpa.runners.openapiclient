@@ -4,4 +4,4 @@
 
 # Soenneker.HealthSherpa.Runners.OpenApiClient
 
-Automation runner that keeps the generated HealthSherpa OpenAPI client repository up to date.
+Regenerates the `Soenneker.HealthSherpa.OpenApiClient` package from HealthSherpa's OpenAPI description.
